@@ -1,7 +1,7 @@
 <?php
 
 $errors = '';
-$myemail = 'sebastian.gates@dkit.ie';// <-----Put your DkIT email address here.
+$myemail = 'D00241714@student.dkit.ie';// <-----Put your DkIT email address here.
 if(empty($_POST['name'])  ||
    empty($_POST['email']) ||
    empty($_POST['message']))
@@ -35,7 +35,7 @@ if( empty($errors))
 
         mail($to,$email_subject,$email_body,$headers);
         //redirect to the 'thank you' page
-        header('Location: contact-form-thank-you.html');
+        header('Location: contact-form-thank-you.php');
 }
 ?>
 <!DOCTYPE HTML>
