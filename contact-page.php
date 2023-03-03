@@ -4,7 +4,7 @@
 <main class="container">
   
 <form class="starter-template text-center" method="POST" name="contactform" action="contact-form-handler.php"> 
-<h1>Contact us</h1>
+<h1 class="mt-4 mb-4">Contact us</h1>
 <!--
   Form fields:
   Your Name* = name
@@ -67,9 +67,12 @@
 </p>
 
 <p>
+
 <label for='image'>Picture of Pet:</label> <br>
-<input type="file" name="image" id="image" accept="image/*">
-<span id="imageError"></span>
+<div id="imgContainer">
+  <input type="file" name="image" id="image" accept="image/*" onchange=previewImage()>
+  <img id="imagePreview" class="img-fluid"> 
+</div>
 </p>
 
 <p>
@@ -78,10 +81,11 @@
 <ul class="errorList" id="messageError"></ul>
 </p>
 
-<input type="submit" value="Submit"><br>
+<input class="btn btn-primary" type="submit" value="Submit"><br>
 
 </form>
 
 </main><!-- /.container -->
 <script src="js/validation.js"></script>
+<script src="js/imgPreview.js"></script>
 <?php include 'includes/footer.php';?>

@@ -10,6 +10,9 @@
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
   </head>
   <body>
@@ -27,13 +30,13 @@
           <span class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="lost-pets.php">Lost</a>
+                <a class="nav-link btn btn-dark" aria-current="page" href="lost-pets.php">Lost</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="found-pets.php">Found</a>
+                <a class="nav-link btn btn-dark" aria-current="page" href="found-pets.php">Found</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="contact-page.php">Contact Us</a>
+                <a class="nav-link btn btn-dark" aria-current="page" href="contact-page.php">Contact Us</a>
               </li>
             </ul>
           </span>

@@ -22,3 +22,7 @@
 .modifiedEmail:valid {
     background-color: rgba(0, 245, 0, 0.4);
 }
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
