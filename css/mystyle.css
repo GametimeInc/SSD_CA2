@@ -1,8 +1,24 @@
-/* Add your own CSS under here */
-footer {
-    background-color: green;
+.footer-text {
+   margin-bottom:0px; 
 }
-
 .error {
     color: red;
+}
+
+.errorList {
+    list-style-type: none;
+    color: red;
+}
+
+/*Check after cache reload*/
+.requireStar {
+    color: red;
+}
+
+.modifiedEmail:invalid {
+    background-color: rgba(245, 0, 0, 0.4);
+}
+
+.modifiedEmail:valid {
+    background-color: rgba(0, 245, 0, 0.4);
 }
