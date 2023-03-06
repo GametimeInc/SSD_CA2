@@ -11,6 +11,10 @@
     padding-right: 2rem;
 }
 
+td {
+    vertical-align: middle;
+}
+
 /*Check after cache reload*/
 .requireStar {
     color: red;
