@@ -11,8 +11,9 @@
     padding-right: 2rem;
 }
 
-td {
+td, th {
     vertical-align: middle;
+    text-align: center;
 }
 
 /*Check after cache reload*/
