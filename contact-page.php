@@ -72,7 +72,7 @@
 <label for='image'>Picture of Pet:</label> <br>
 <div id="imgContainer">
   <input type="file" name="image" id="image" accept="image/*" onchange=previewImage()>
-  <img id="imagePreview" class="img-fluid"> 
+  <img id="imagePreview"> 
 </div>
 </p>
 
