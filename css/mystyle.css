@@ -73,3 +73,8 @@ img {
         width: 100%;
     }
 }
+
+.small-container {
+    max-width: 600px;
+    margin:auto;
+}

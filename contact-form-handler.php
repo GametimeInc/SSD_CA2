@@ -37,22 +37,29 @@ $email_address = $_POST['email'];
 $reason = $_POST['reason'];
 $type_of_animal = $_POST['typeOfAnimal'];
 $pet_name = $_POST['petName'];
-$breed = $_POST['breed'];
+$pet_breed = $_POST['breed'];
 $image = $_POST['image'];
 $message = $_POST['message'];
 
-if (!preg_match(
-    "/[a-z]/",
-    $name))
-    {
-        $errors .= "\n Error: Invalid name";
-    }
-if (!preg_match(
-"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
-$email_address))
-{
-    $errors .= "\n Error: Invalid email address";
-}
+if (!preg_match("/[a-z]/", $name)) $errors .= "\n Error: Invalid name";
+
+if (!preg_match("/08[35679]\d{7}$/", $number)) $errors .= "\n Error: Invalid number";
+
+if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $email_address)) $errors .= "\n Error: Invalid email address";
+
+if ($reason == "") $errors .= "\n Error: Invalid reason";
+
+if (!preg_match("/^[A-Za-z ]{1,30}$/", $type_of_animal)) $errors .= "\n Error: Invalid animal type";
+
+if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_name)) $errors .= "\n Error: Invalid pet name";
+
+if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_breed)) $errors .= "\n Error: Invalid pet breed ";
+
+if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_name)) $errors .= "\n Error: Invalid pet name";
+
+if (!preg_match("/^[\s\S]{1,3000}$/", $pet_name)) $errors .= "\n Error: Invalid message";
+
+
 
 /*Remember to also upload datetime to database
 try console logging to check format of input datetime*/
@@ -61,7 +68,7 @@ if( empty($errors))
         $to = $myemail;
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ".
-        " Here are the details:\n Name: $name \n Number: $number \n Email: $email_address \n Reason: $reason \n Type of Animal: $type_of_animal \n Pet's Name: $pet_name \n Breed: $breed \n Image: $image \n Message: \n $message";
+        " Here are the details:\n Name: $name \n Number: $number \n Email: $email_address \n Reason: $reason \n Type of Animal: $type_of_animal \n Pet's Name: $pet_name \n Breed: $pet_breed \n Image: $image \n Message: \n $message";
 
         mail($to,$email_subject,$email_body,$headers);
         //redirect to the 'thank you' page

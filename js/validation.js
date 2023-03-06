@@ -14,12 +14,20 @@ function nameValidation() {
     let nameErrList = "";
     let name = document.getElementById("name")
 
-    if(!name.value.match(/^[a-zA-Z ]+$/)) {
+    if (name.value == "") {
+        nameErrList += "<li>Name must not be blank</li>"
+        name.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
+    }
+    else if(!name.value.match(/^[a-zA-Z ]+$/)) {
         nameErrList += "<li>You may only use english letters and spaces</li>"
         name.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
-    if(name.value.length == 1) {
+    if(name.value.length <= 1) {
         nameErrList += "<li>The name must be longer than one character</li>"
+        name.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
+    }
+    else if (name.value.length >= 30) {
+        nameErrList += "<li>The name must be less than or equal to 30 characters</li>"
         name.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
     
@@ -32,8 +40,14 @@ function nameValidation() {
 }
 
 function emailValidation() {
+    let emailErrList = "";
     let email = document.getElementById("email")
-    email.classList = "modifiedEmail"
+    let length = email.value.length;
+    if(length > 40) emailErrList += "<li>Email must be 40 characters or less</li>"
+    else if(length == 0) emailErrList += "<li>Email must not be blank</li>"
+    email.classList = "form-control modifiedEmail"
+    document.getElementById("emailError").innerHTML = emailErrList;
+
 }
 
 function numberValidation() {
@@ -69,6 +83,7 @@ function reasonValidation() {
     let reason = document.getElementById("reason")
     let errMessage = "";
 
+    console.log(reason.value)
     if(reason.value == "" ) {
         errMessage += "<li>You must choose a valid reason for contact</li>"
         reason.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
@@ -86,8 +101,16 @@ function typeValidation() {
     let typeErrList = "";
     let type = document.getElementById("typeOfAnimal")
 
-    if(!type.value.match(/^[a-zA-Z ]+$/)) {
-        typeErrList += "<li>You may only use english letters and spaces</li>"
+    if(!type.value.match(/^[a-zA-Z ]+$/) && !type.value == "") {
+        typeErrList += "<li>The type of animal should not be may only use english letters and spaces</li>"
+        type.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
+    }
+    if(type.value.length == 0) {
+        typeErrList += "<li>The type of animal should not be blank</li>"
+        type.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
+    }
+    else if(type.value.length > 30) {
+        typeErrList += "<li>The type of animal should not be over 30 characters long</li>"
         type.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
 
@@ -103,16 +126,18 @@ function typeValidation() {
 function petNameValidation() {
     let petNameErrList = "";
     let petName = document.getElementById("petName")
-
-    if(!petName.value.match(/^[a-zA-Z ]+$/)) {
-        petNameErrList += "<li>You may only use english letters and spaces</li>"
+    if(!petName.value.match(/^[a-zA-Z ]+$/) && petName.value != "") {
+        petNameErrList += "<li>The pet name entered may only contain english letters and spaces</li>"
         petName.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
 
-    if(petNameErrList == "") {
-        petName.style.backgroundColor = "rgba(0, 245, 0, 0.4)"
+    if(petName.value.length > 30) {
+        petNameErrList += "<li>The pet name should not be over 30 characters long</li>"
+        petName.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
-    else petNameErrList += "<br>"
+
+    if(petNameErrList == "") petName.style.backgroundColor = "rgba(0, 245, 0, 0.4)"
+    if(petName.value == "") petName.style.backgroundColor = "white"
 
     document.getElementById("petNameError").innerHTML = petNameErrList;
 }
@@ -121,15 +146,24 @@ function breedValidation() {
     let breedErrList = "";
     let breed = document.getElementById("breed")
 
-    if(!breed.value.match(/^[a-zA-Z ]+$/)) {
-        breedErrList += "<li>You may only use english letters and spaces</li>"
+    if(!breed.value.match(/^[a-zA-Z ]+$/) && breed.value != "") {
+        breedErrList += "<li>The breed entered may only contain english letters and spaces</li>"
         breed.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
 
-    if(breedErrList == "") {
+    if(breed.value.length > 30) {
+        breedErrList += "<li>The breed entered may not be more than 30 characters long</li>"
+        breed.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
+    }
+
+    if(breedErrList == "" && breed.value != "") {
         breed.style.backgroundColor = "rgba(0, 245, 0, 0.4)"
     }
-    else breedErrList += "<br>"
+
+    
+    
+    if(breedErrList == "") breed.style.backgroundColor = "rgba(0, 245, 0, 0.4)"
+    if(breed.value == "") breed.style.backgroundColor = "white"
 
     document.getElementById("breedError").innerHTML = breedErrList;
 }
@@ -146,11 +180,14 @@ function messageValidation() {
         messageErrList += "<li>Your message must not be empty</li>"
         message.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
     }
+    else if (message.value.length > 3000) {
+        messageErrList += "<li>Your message must not be over 3000 characters</li>"
+        message.style.backgroundColor = "rgba(245, 0, 0, 0.4)"
 
-    if(messageErrList == "") {
-        message.style.backgroundColor = "rgba(0, 245, 0, 0.4)"
     }
-    else messageErrList += "<br>"
+
+    if(messageErrList == "") message.style.backgroundColor = "rgba(0, 245, 0, 0.4)"
+    
 
     document.getElementById("messageError").innerHTML = messageErrList;
 }
