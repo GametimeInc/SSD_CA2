@@ -39,7 +39,7 @@ $statement->closeCursor();
                   <td><form action="delete_product.php" method="post">
                       <input type="hidden" name="product_id"
                             value="<?php echo $product['productID']; ?>">
-                      <input type="submit" value="Delete">
+                      <input id="deleteButton" type="submit" value="Delete">
                   </form></td>
               </tr>
               <?php endforeach; ?>

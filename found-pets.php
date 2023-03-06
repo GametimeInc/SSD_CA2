@@ -14,7 +14,7 @@ $statement->closeCursor();
 <main class="container">
   <div class="starter-template text-center">
     <h1>Come get me, human!</h1>
-    <p class="lead">These animals are being kept by some kind souls, ready to return them to your loving arms!<br>Check and see if your buddy is here first, if not, contact us!<br><br>Found someone's pet? Contact us!</p>
+    <p class="lead">These animals are being kept by some kind souls, ready to return them to your loving arms!<br>Check and see if your buddy is here first. If not, contact us!<br><br>Found someone's pet? Contact us!</p>
   </div>
   <section>
         <!-- display a table of products -->
@@ -39,7 +39,7 @@ $statement->closeCursor();
                   <td><form action="delete_product.php" method="post">
                       <input type="hidden" name="product_id"
                             value="<?php echo $product['productID']; ?>">
-                      <input type="submit" value="Delete">
+                      <input id="deleteButton" type="submit" value="Delete">
                   </form></td>
               </tr>
               <?php endforeach; ?>

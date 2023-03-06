@@ -5,6 +5,7 @@
   
 <form class="starter-template text-center" method="POST" name="contactform" action="contact-form-handler.php"> 
 <h1 class="mt-4 mb-4">Contact us</h1>
+<p>All fields with <span class="requireStar">* </span>are mandatory</p>
 <!--
   Form fields:
   Your Name* = name
@@ -20,25 +21,25 @@
 
 
 <p>
-<label for='name'><span class="requireStar">*</span>Your Name:</label> 
+<label for='name'><span class="requireStar">* </span>Your Name:</label> 
 <input type="text" name="name" id="name" onblur=nameValidation() placeholder="Letters only" pattern="^[a-zA-Z ]+$" required> <br>
 <ul class="errorList" id="nameError"></ul>
 </p>
 
 <p>
-<label for='number'><span class="requireStar">*</span>Mobile Number:</label> 
-<input type="text" name="number" id="number" onblur=numberValidation() pattern="08[35679]\d{7}$" placeholder="IE # (e.g 0835921240)" required> <br>
+<label for='number'><span class="requireStar">* </span>Mobile Number:</label> 
+<input type="text" name="number" id="number" onblur=numberValidation() pattern="08[35679]\d{7}$" placeholder="IE number (e.g 0835921240)" required> <br>
 <ul class="errorList" id="numberError"></ul>
 </p>
 
 <p>
-<label for='email'><span class="requireStar">*</span>Email Address:</label> 
+<label for='email'><span class="requireStar">* </span>Email Address:</label> 
 <input type="email" name="email" id="email" onblur=emailValidation() placeholder="example@gmail.com" required> <br> 
 <!--Pattern attribute is not advised, use of type "email" is instead suggested-->
 </p>
 
 <p>
-<label for='reason'><span class="requireStar">*</span>Reason for contact:</label> 
+<label for='reason'><span class="requireStar">* </span>Reason for contact:</label> 
 <select name="reason" id="reason" onchange=reasonValidation() required>
   <option value></option>
   <option value="lostPet">Lost Pet</option>
@@ -49,7 +50,7 @@
 </p>
 
 <p>
-<label for='typeOfAnimal'><span class="requireStar">*</span>Type Of Animal:</label> 
+<label for='typeOfAnimal'><span class="requireStar">* </span>Type Of Animal:</label> 
 <input type="text" name="typeOfAnimal" id="typeOfAnimal" onblur=typeValidation() placeholder="Cat? Dog? Squirrel?" pattern="^[a-zA-Z ]+$" required> <br>
 <ul class="errorList" id="typeError"></ul>
 </p>
@@ -76,7 +77,7 @@
 </p>
 
 <p>
-<label for='message'><span class="requireStar">*</span>Message:</label> <br>
+<label for='message'><span class="requireStar">* </span>Message:</label> <br>
 <textarea onblur=messageValidation() name="message" id="message" placeholder="Give an informative message about the pet in question, and terms for someone reaching out to you!" required></textarea>
 <ul class="errorList" id="messageError"></ul>
 </p>

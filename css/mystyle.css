@@ -8,6 +8,7 @@
 .errorList {
     list-style-type: none;
     color: red;
+    padding-right: 2rem;
 }
 
 /*Check after cache reload*/
@@ -25,4 +26,25 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+}
+
+input, select, textarea {
+    width: 20%;
+}
+
+img {
+    width: 20%;
+}
+
+#deleteButton {
+    width: auto;
+}
+
+@media screen AND (max-width:600px) {
+    input,select,textarea  {
+        width: 80%;
+    }
+    #deleteButton {
+        width: auto;
+    }
 }
