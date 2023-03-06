@@ -40,6 +40,15 @@ img {
     width: auto;
 }
 
+#indexButtons {
+    width: 20%;
+    margin: auto;
+    padding: 0%;
+    list-style: none;
+}
+#indexButtons li {
+    margin-bottom: 2%;
+}
 @media screen AND (max-width:600px) {
     input,select,textarea  {
         width: 80%;

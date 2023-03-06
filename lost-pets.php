@@ -2,7 +2,7 @@
 require_once('includes/database.php');
 
 // Get pets
-$queryPets = 'SELECT * FROM pets';
+$queryPets = 'SELECT * FROM lostpets';
 $statement = $db->prepare($queryPets);
 $statement->execute();
 $pets = $statement->fetchAll();
@@ -21,26 +21,28 @@ $statement->closeCursor();
         <div class="table-responsive">
           <table class="table table-striped">
               <tr>
-                  <th>Code</th>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Stock</th>
-                  <th>Rating Out Of 5</th>
-                  <th>Delete</th>
+                  <th>Type of Pet</th>
+                  <th>Pet Name</th>
+                  <th>Breed</th>
+                  <th>Image</th>
+                  <th>Owner Name</th>
+                  <th>Mobile No.</th>
+                  <th>Email</th>
+                  <th>Message</th>
+                  <th>Date Added</th>
               </tr>
 
               <?php foreach ($pets as $pet) : ?>
               <tr>
-                  <td><?php echo $pet['productCode']; ?></td>
-                  <td><?php echo $pet['productName']; ?></td>
-                  <td class="right"><?php echo $pet['listPrice']; ?></td>
-                  <td><?php echo $pet['stock']; ?></td>
-                  <td><?php echo $pet['ratingOf5']; ?></td>
-                  <td><form action="delete_product.php" method="post">
-                      <input type="hidden" name="product_id"
-                            value="<?php echo $product['productID']; ?>">
-                      <input id="deleteButton" type="submit" value="Delete">
-                  </form></td>
+                  <td><?php echo $pet['pet_type']; ?></td>
+                  <td><?php echo $pet['pet_name']; ?></td>
+                  <td><?php echo $pet['pet_breed']; ?></td>
+                  <td><?php echo $pet['pet_image']; ?></td>
+                  <td><?php echo $pet['person_name']; ?></td>
+                  <td><?php echo $pet['person_mobile']; ?></td>
+                  <td><?php echo $pet['person_email']; ?></td>
+                  <td><?php echo $pet['person_message']; ?></td>
+                  <td><?php echo $pet['date_added']; ?></td>
               </tr>
               <?php endforeach; ?>
           </table>
