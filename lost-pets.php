@@ -13,7 +13,7 @@ $statement->closeCursor();
 
 <main class="container">
   <div class="starter-template text-center">
-    <h1>Wanted! Outlaws loose and running!</h1>
+    <h1 class="mt-4">Wanted! Outlaws loose and running!</h1>
     <p class="lead">Our website is trusted by many to help return stray pets in Ireland.<br>Head over to the contact form to supply us with info about your pet, and we will get people looking in no time!<br><br>Think you have found someone's lost pet? Have a look at the boys and girls below and see if anyone matches!</p>
   </div>
   <section>

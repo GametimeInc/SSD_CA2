@@ -13,8 +13,8 @@ $statement->closeCursor();
 
 <main class="container">
   <div class="starter-template text-center">
-    <h1>Come get me, human!</h1>
-    <p class="lead">These animals are being kept by some kind souls, ready to return them to your loving arms!<br>Check and see if your buddy is here first. If not, contact us!<br><br>Found someone's pet? Contact us!</p>
+    <h1 class="mt-4">Come get me, human!</h1>
+    <p class="lead">These animals are being kept by some kind souls, ready to return them to your loving arms!<br>Check and see if your buddy is here first. If not, contact us!<br><br>Found someone's pet? Then once again, contact us!</p>
   </div>
   <section>
         <!-- display a table of products -->
