@@ -37,7 +37,7 @@ $statement->closeCursor();
                   <td><?php echo $pet['pet_type']; ?></td>
                   <td><?php echo $pet['pet_name']; ?></td>
                   <td><?php echo $pet['pet_breed']; ?></td>
-                  <td><?php echo $pet['pet_image']; ?></td>
+                  <td><img class="petImage" src="./imagesuploadedf/<?php echo $pet['pet_image']; ?>"/></td>
                   <td><?php echo $pet['person_name']; ?></td>
                   <td><?php echo $pet['person_mobile']; ?></td>
                   <td><?php echo $pet['person_email']; ?></td>
