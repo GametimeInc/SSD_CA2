@@ -16,27 +16,7 @@ $statement->closeCursor();
     <h1 class="mt-4">Wanted! Outlaws loose and running!</h1>
     <p class="lead">Our website is trusted by many to help return stray pets in Ireland.<br>Head over to the contact form to supply us with info about your pet, and we will get people looking in no time!<br><br>Think you have found someone's lost pet? Have a look at the boys and girls below and see if anyone matches!</p>
   </div>
-  <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./imagesuploadedf/test.png" class="d-block w-100" alt="something">
-    </div>
-    <div class="carousel-item">
-      <img src="./imagesuploadedf/test.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./imagesuploadedf/test.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+  
   <section>
         <!-- display a table of products -->
         <div class="table-responsive">
