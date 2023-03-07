@@ -30,13 +30,13 @@
           <span class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link btn btn-dark" aria-current="page" href="lost-pets.php">Lost</a>
+                <a class="nav-link" aria-current="page" href="lost-pets.php">Lost</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-dark" aria-current="page" href="found-pets.php">Found</a>
+                <a class="nav-link" aria-current="page" href="found-pets.php">Found</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-dark" aria-current="page" href="contact-page.php">Contact Us</a>
+                <a class="nav-link" aria-current="page" href="contact-page.php">Contact Us</a>
               </li>
             </ul>
           </span>

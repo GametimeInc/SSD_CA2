@@ -65,7 +65,9 @@ img {
     #deleteButton {
         width: auto;
     }
-    
+    #indexButtons {
+        width: 70%;
+    }
 }
 
 @media screen AND (max-width:1000px) {
