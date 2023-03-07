@@ -68,7 +68,7 @@ if( empty($errors))
         $to = $myemail;
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ".
-        " Here are the details:\n Name: $name \n Number: \n $number \n\n Email: \n $email_address \n\n Reason: \n $reason \n\n Type of Animal: \n $type_of_animal \n\n Pet's Name: \n $pet_name \n\n Breed: \n $pet_breed \n\n Image: \n $image \n\n Message: \n $message";
+        " Here are the details:\n Name:\n $name \n\n Number: \n $number \n\n Email: \n $email_address \n\n Reason: \n $reason \n\n Type of Animal: \n $type_of_animal \n\n Pet's Name: \n $pet_name \n\n Breed: \n $pet_breed \n\n Image: \n $image \n\n Message: \n $message";
 
         mail($to,$email_subject,$email_body,$headers);
         //redirect to the 'thank you' page
