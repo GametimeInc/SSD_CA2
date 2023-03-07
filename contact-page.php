@@ -74,7 +74,7 @@
     <label for='image'class="form-label">Picture of Pet:</label> <br>
     <div id="imgContainer">
       <input type="file" name="image" class="form-control"id="image" accept="image/*" onchange=previewImage()>
-      <img id="imagePreview"> 
+      <img id="imagePreview" class="w-50 mt-2"/> 
     </div>
     </p>
 
