@@ -1,5 +1,10 @@
 <?php
-
+function validateFunction($input) {
+  $input = trim($input);
+  $input = stripslashes($input);
+  $input = htmlspecialchars($input);
+  return $input;
+}
 $errors = '';
 $myemail = 'D00241714@student.dkit.ie';
 
@@ -31,15 +36,15 @@ $headers .= 'From: '.$myemail."\r\n".
     'X-Mailer: PHP/' . phpversion();
 
 
-$name = $_POST['name'];
-$number = $_POST['number'];
-$email_address = $_POST['email'];
-$reason = $_POST['reason'];
-$type_of_animal = $_POST['typeOfAnimal'];
-$pet_name = $_POST['petName'];
-$pet_breed = $_POST['breed'];
-$image = $_POST['image'];
-$message = $_POST['message'];
+$name = validateFunction($_POST['name']);
+$number = validateFunction($_POST['number']);
+$email_address = validateFunction($_POST['email']);
+$reason = validateFunction($_POST['reason']);
+$type_of_animal = validateFunction($_POST['typeOfAnimal']);
+$pet_name = validateFunction($_POST['petName']);
+$pet_breed = validateFunction($_POST['breed']);
+$image = validateFunction($_POST['image']);
+$message = validateFunction($_POST['message']);
 
 if (!preg_match("/[a-z]/", $name)) $errors .= "\n Error: Invalid name";
 
