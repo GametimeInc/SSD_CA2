@@ -3,6 +3,7 @@ function validateFunction($input) {
   $input = trim($input);
   $input = stripslashes($input);
   $input = htmlspecialchars($input);
+  $input = preg_replace("/[ ]{2,}/", " ", $input);
   return $input;
 }
 $errors = '';
@@ -28,7 +29,7 @@ if(empty($_POST['name'])  ||
    empty($_POST['typeOfAnimal']) ||
    empty($_POST['message']))
 {
-    $errors .= "\n Error: all fields are required";
+    $errors .= "\n Error: all required fields must be filled in";
 }
 
 $headers .= 'From: '.$myemail."\r\n".
@@ -41,12 +42,18 @@ $number = validateFunction($_POST['number']);
 $email_address = validateFunction($_POST['email']);
 $reason = validateFunction($_POST['reason']);
 $type_of_animal = validateFunction($_POST['typeOfAnimal']);
-$pet_name = validateFunction($_POST['petName']);
+if ($_POST['petName'] == "") $pet_name = "No name provided";
+else $pet_name = validateFunction($_POST['petName']);
+
 $pet_breed = validateFunction($_POST['breed']);
+
+if ($_POST['breed'] == "") $pet_breed = "No breed provided";
+else $pet_Breed = validateFunction($_POST['petBreed']);
+
 $image = validateFunction($_POST['image']);
 $message = validateFunction($_POST['message']);
 
-if (!preg_match("/[a-z]/", $name)) $errors .= "\n Error: Invalid name";
+if (!preg_match("/[A-Za-z]/", $name)) $errors .= "\n Error: Invalid name";
 
 if (!preg_match("/08[35679]\d{7}$/", $number)) $errors .= "\n Error: Invalid number";
 
@@ -56,13 +63,11 @@ if ($reason == "") $errors .= "\n Error: Invalid reason";
 
 if (!preg_match("/^[A-Za-z ]{1,30}$/", $type_of_animal)) $errors .= "\n Error: Invalid animal type";
 
-if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_name)) $errors .= "\n Error: Invalid pet name";
+if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_name) && $pet_name != "") $errors .= "\n Error: Invalid pet name";
 
-if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_breed)) $errors .= "\n Error: Invalid pet breed ";
+if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_breed) && $pet_breed != "") $errors .= "\n Error: Invalid pet breed ";
 
-if (!preg_match("/^[A-Za-z ]{1,30}$/", $pet_name)) $errors .= "\n Error: Invalid pet name";
-
-if (!preg_match("/^[\s\S]{1,3000}$/", $pet_name)) $errors .= "\n Error: Invalid message";
+if (!preg_match("/^[\s\S]{1,3000}$/", $message)) $errors .= "\n Error: Invalid message";
 
 
 
