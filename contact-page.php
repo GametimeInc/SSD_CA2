@@ -84,7 +84,7 @@
     <ul class="errorList" id="messageError"></ul>
     </p>
 
-    <input class="btn btn-primary" type="submit" value="Submit"><br>
+    <input class="btn btn-primary mb-2" type="submit" value="Submit"><br>
   
 </form>
 

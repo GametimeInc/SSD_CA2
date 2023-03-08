@@ -58,7 +58,9 @@ img {
 #indexButtons li {
     margin-bottom: 2%;
 }
-@media screen AND (max-width:600px) {
+
+
+@media screen AND (max-width:768px) {
     input,select,textarea  {
         width: 80%;
     }
@@ -83,4 +85,8 @@ img {
 
 #carouselExample {
     margin: auto;
+}
+
+input[type=submit] {
+    width: 100%;
 }
