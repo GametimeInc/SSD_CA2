@@ -45,7 +45,7 @@ $type_of_animal = validateFunction($_POST['typeOfAnimal']);
 if ($_POST['petName'] == "") $pet_name = "No name provided";
 else $pet_name = validateFunction($_POST['petName']);
 if ($_POST['breed'] == "") $pet_breed = "No breed provided";
-else $pet_Breed = validateFunction($_POST['breed']);
+else $pet_breed = validateFunction($_POST['breed']);
 if ($_POST['image'] == "") $image = "No image provided";
 else $image = validateFunction($_POST['image']);
 $message = validateFunction($_POST['message']);
