@@ -30,7 +30,7 @@ $statement->closeCursor();
                   <th>Mobile No.</th>
                   <th>Email</th>
                   <th>Message</th>
-                  <th>Date Added</th>
+                  <th>When Added</th>
               </tr>
 
               <?php foreach ($pets as $pet) : ?>
@@ -43,7 +43,11 @@ $statement->closeCursor();
                   <td><?php echo $pet['person_mobile']; ?></td>
                   <td><?php echo $pet['person_email']; ?></td>
                   <td><?php echo $pet['person_message']; ?></td>
-                  <td><?php echo $pet['date_added']; ?></td>
+                  <td><?php 
+                    $daysSince = floor((strtotime("now") - strtotime($pet['date_added']))/(60*60*24));
+                    if($daysSince == 0) echo "today";
+                    else echo $daysSince . " days ago"; ?>
+                  </td>
               </tr>
               <?php endforeach; ?>
           </table>
